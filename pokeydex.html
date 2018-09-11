@@ -1,0 +1,63 @@
+
+<html>
+<body>
+
+<p>Click the button to serch for a pokemon .</p>
+
+<button onclick="myFunction()">To find ability</button>
+
+
+<p id="demo"></p>
+<button onclick="weakness()">To find pokeymon</button>
+<p id="medo"></p>
+
+<script>
+var text = '{"results":[{"url":"Overgrow","name":"bulbasaur"},{"url":"Overgrow","name":"ivysaur"},{"url":"Overgrow","name":"venusaur"},{"url":"Blaze","name":"charmander"},{"url":"Blaze","name":"charmeleon"},{"url":"Blaze","name":"charizard"},{"url":"Torrent","name":"squirtle"},{"url":"Torrent","name":"wartortle"},{"url":"Torrent","name":"blastoise"},{"url":"Shield Dust","name":"caterpie"},{"url":"Shed skin","name":"metapod"},{"url":"Compound eye","name":"butterfree"},{"url":"Shield Dust","name":"weedle"},{"url":"Shed skin","name":"kakuna"},{"url":"Swarn","name":"beedrill"},{"url":"Keen Eye","name":"pidgey"},{"url":"Keen Eye","name":"pidgeotto"},{"url":"Keen eye","name":"pidgeot"},{"url":"Run Away","name":"rattata"},{"url":"Run Away","name":"raticate"}]}';
+var i=0;
+function myFunction()
+{
+var poke = prompt("Please enter a Pokemons Name or Ability", "bulbasaur");
+	if(poke == "bulbasaur"){i=0;}
+	else if(poke == "ivyasaur"){i=1;}
+	else if(poke == "venasaur"){i=2;}
+	else if(poke == "charmander"){i=3;}
+	else if(poke == "charmeleon"){i=4;}
+	else if(poke == "charizard"){i=5;}
+	else if(poke == "squirtler"){i=6;}
+	else if(poke == "wartortle"){i=7;}
+	else if(poke == "blastoise"){i=8;}
+	else if(poke == "kakuna"){i=9;}
+	else if(poke == "beedrill"){i=10;}
+	else if(poke == "rattata"){i=11;}
+	else if(poke == "raticate"){i=12;}
+	else {i=22;}
+	
+obj = JSON.parse(text);
+	if(i<=12){
+	document.getElementById("demo").innerHTML =
+	obj.results[i].name + " Ability " + obj.results[i].url;
+	}
+
+}
+function weakness()
+{
+	var wek = prompt("please enter a weakness","ground");
+{
+	if(wek == "ground"||"rock"||"water")
+	{document.getElementById("demo").innerHTML = "bulbasaur"+" "+"ivysaur"+" "+"venusaur";}
+	else if(wek == "bug"||"steel"||"grass"||"ice")
+	{document.getElementBuId("demo").innerHTML = "charmander"+" "+"charmeleon"+" "+"charizard";}
+	else if(wek == "ground"||"rock"||"fire")
+	{document.getElementBuId("demo").innerHTML = "squirtler"+" "+"wartortle"+" "+"blastoise";}
+	else if(wek == "grass"||"physics"||"dark")
+	{document.getElementBuId("demo").innerHTML = "kakuna"+" "+"beedrill"+" "+"ratata";}
+	else if(wek =="fighting")
+	{document.getElementBuId("demo").innerHTML = "rattata"+" "+"taticate";}
+
+}
+}
+
+
+</script>
+</body>
+</html>
